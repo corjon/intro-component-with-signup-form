@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+<body>
+
+  <main>
+    <article>
+      <h1>Learn to code by watching others</h1>
+
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable.</p>
+    </article>
+
+    <div class="container">
+      <div class="cta">
+        <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+
+      <div class="form-area">
+        <form action="" method="post" autocomplete="on">
+          <div class="field">
+            <input type="text" placeholder="First Name"    aria-label="First Name"    aria-required="true" id="first-name">
+            <img src="images/icon-error.svg" alt="" aria-label="hidden" class="hidden" id="err-icon">
+            <p id="err-message"></p>
+          </div>
+          <div class="field">
+            <input type="text" placeholder="Last Name"     aria-label="Last Name"     aria-required="true" id="last-name">
+            <img src="images/icon-error.svg" alt="" aria-label="hidden" class="hidden" id="err-icon">
+            <p id="err-message"></p>
+          </div>
+          <div class="field">
+            <input type="text" placeholder="Email Address" aria-label="Email Address" aria-required="true" id="email-address">
+            <img src="images/icon-error.svg" alt="" aria-label="hidden" class="hidden" id="err-icon">
+            <p id="err-message"></p>
+          </div>
+          <div class="field">
+            <input type="text" placeholder="Password"      aria-label="Password"      aria-required="true" id="password">
+            <img src="images/icon-error.svg" alt="" aria-label="hidden" class="hidden" id="err-icon" >
+            <p id="err-message"></p>
+          </div>
+          <input type="submit" value="Claim your free trial">
+        </form>
+
+        <p>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
