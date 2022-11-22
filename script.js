@@ -11,26 +11,41 @@ const lastName = document.getElementById("last-name");
 const email = document.getElementById("email-address");
 const password = document.getElementById("password");
 
-hasValue = (input, message) => {
+showSuccess = (input) => {
   let errMsg = input.parentNode.querySelector("#err-message");
   let errIcon = input.parentNode.querySelector("#err-icon");
 
+  errMsg.innerHTML = "";
+  errIcon.classList.add("hidden");
+  input.style.border = "1px solid #DEDEDE";
+}
+
+showInvalid = (input, message) => {
+  let errMsg = input.parentNode.querySelector("#err-message");
+  let errIcon = input.parentNode.querySelector("#err-icon");
+  
+  errMsg.innerHTML = message;
+  errIcon.classList.remove("hidden");
+  input.style.border = "2px solid #FF7979";
+  input.focus();
+}
+
+hasValue = (input, message) => {
   if (input.value === "") {
-    errMsg.innerHTML = message;
-    errIcon.classList.remove("hidden");
-    input.style.border = "2px solid #FF7979";
-    input.focus();
+    showInvalid(input, message);
   }
   else {
-    errMsg.innerHTML = "";
-    errIcon.classList.add("hidden");
-    input.style.border = "1px solid #DEDEDE";
+    showSuccess(input);
     return true;
   }
 }
 
-validateEmail = () => {
-  if (hasValue(email, emailErrMsg) && email.value.match(emailFormat)) {
+validateEmail = (input, message) => {
+  if (input === "" || !email.value.match(emailFormat)) {
+    showInvalid(input, message); 
+  }
+  else {
+    showSuccess(input);
     return true;
   }
 }
@@ -39,7 +54,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let passwordValid = hasValue(password, passwordErrMsg);
-  let emailValid = validateEmail();
+  let emailValid = validateEmail(email, emailErrMsg);
   let lastNameValid = hasValue(lastName, lastNameErrMsg);
   let firstNameValid = hasValue(firstName, firstNameErrMsg);
 
