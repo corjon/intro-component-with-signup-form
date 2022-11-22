@@ -12,8 +12,8 @@ const email = document.getElementById("email-address");
 const password = document.getElementById("password");
 
 showSuccess = (input) => {
-  let errMsg = input.parentNode.querySelector("#err-message");
-  let errIcon = input.parentNode.querySelector("#err-icon");
+  let errMsg = input.parentNode.querySelector(".err-message");
+  let errIcon = input.parentNode.querySelector(".err-icon");
 
   errMsg.innerHTML = "";
   errIcon.classList.add("hidden");
@@ -21,8 +21,8 @@ showSuccess = (input) => {
 }
 
 showInvalid = (input, message) => {
-  let errMsg = input.parentNode.querySelector("#err-message");
-  let errIcon = input.parentNode.querySelector("#err-icon");
+  let errMsg = input.parentNode.querySelector(".err-message");
+  let errIcon = input.parentNode.querySelector(".err-icon");
   
   errMsg.innerHTML = message;
   errIcon.classList.remove("hidden");
